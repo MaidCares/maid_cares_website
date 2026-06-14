@@ -1,5 +1,6 @@
 'use client';
 
+import Image from 'next/image';
 import { useLang } from '@/context/LanguageContext';
 import { t } from '@/copy/translations';
 
@@ -10,14 +11,23 @@ export default function Hero() {
   const copy = t[lang].hero;
 
   return (
-    <section className="relative bg-[#0B4D43] text-white overflow-hidden">
-      {/* Decorative background shapes */}
-      <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute -top-20 -right-20 w-72 h-72 rounded-full bg-white/5" />
-        <div className="absolute bottom-0 -left-10 w-48 h-48 rounded-full bg-white/5" />
-      </div>
+    <section className="relative text-white overflow-hidden">
+      {/* Background photo */}
+      <Image
+        src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?w=1200&q=80"
+        alt=""
+        fill
+        priority
+        className="object-cover object-center-top"
+        sizes="100vw"
+      />
+      {/* Dark teal overlay */}
+      <div
+        className="absolute inset-0"
+        style={{ background: 'linear-gradient(to bottom, rgba(26,143,143,0.82) 0%, rgba(10,60,60,0.90) 100%)' }}
+      />
 
-      <div className="relative max-w-5xl mx-auto px-4 pt-14 pb-16 text-center">
+      <div className="relative z-10 max-w-5xl mx-auto px-4 pt-14 pb-16 text-center">
         <span className="inline-block bg-white/15 text-white text-xs font-semibold px-3 py-1.5 rounded-full mb-6 fade-in">
           {copy.badge}
         </span>
@@ -33,11 +43,11 @@ export default function Hero() {
           {copy.sub}
         </p>
 
-        {/* Salary teaser */}
-        <div className="inline-flex flex-col items-center bg-white/10 rounded-2xl px-8 py-4 mb-8 fade-in delay-3">
-          <span className="text-4xl font-extrabold">SAR 1,200+</span>
-          <span className="text-white/70 text-sm mt-1">{copy.salaryLabel}</span>
-          <span className="text-white/50 text-xs mt-0.5">{copy.salaryNote}</span>
+        {/* Salary teaser — solid white box */}
+        <div className="inline-flex flex-col items-center bg-white rounded-2xl px-8 py-4 mb-8 fade-in delay-3 shadow-lg">
+          <span className="text-4xl font-extrabold text-gray-900">SAR 1,500–2,100</span>
+          <span className="text-gray-500 text-sm mt-1">{copy.salaryLabel}</span>
+          <span className="text-gray-400 text-xs mt-0.5">{copy.salaryNote}</span>
         </div>
 
         <div className="fade-in delay-4">

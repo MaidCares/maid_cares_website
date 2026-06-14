@@ -10,7 +10,7 @@ export default function FAQ() {
   const [open, setOpen] = useState<number | null>(null);
 
   return (
-    <section className="py-14 reveal">
+    <section className="py-14 bg-[#F0FAFA] reveal">
       <div className="max-w-2xl mx-auto px-4">
         <h2 className="text-2xl sm:text-3xl font-bold text-center text-gray-900 mb-8">
           {copy.heading}
@@ -25,7 +25,7 @@ export default function FAQ() {
               >
                 <span className="font-semibold text-gray-900 text-sm">{item.q}</span>
                 <svg
-                  className={`w-4 h-4 flex-shrink-0 text-[#0B4D43] transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`}
+                  className={`w-4 h-4 flex-shrink-0 text-[#1A8F8F] transition-transform duration-200 ${open === i ? 'rotate-180' : ''}`}
                   viewBox="0 0 16 16"
                   fill="none"
                 >

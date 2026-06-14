@@ -9,33 +9,29 @@ export default function Navbar() {
   const { lang, setLang } = useLang();
   const copy = t[lang].navbar;
 
-  function toggle() {
-    setLang(lang === 'taglish' ? 'english' : 'taglish');
-  }
-
   return (
     <nav className="sticky top-0 z-50 bg-white border-b border-gray-100 shadow-sm">
       <div className="max-w-5xl mx-auto px-4 h-14 flex items-center justify-between">
-        <span className="text-[#0B4D43] font-bold text-lg tracking-tight">MaidCares</span>
+        <span className="text-[#1A8F8F] font-bold text-lg tracking-tight">MaidCares</span>
 
         <div className="flex items-center gap-3">
-          {/* Language toggle pill */}
-          <button
-            onClick={toggle}
-            aria-label="Toggle language"
-            className="relative flex items-center w-16 h-8 rounded-full border border-[#0B4D43] overflow-hidden text-xs font-semibold"
-          >
-            <span
-              className={`absolute inset-y-0 left-0 w-1/2 flex items-center justify-center transition-colors duration-150 ${lang === 'taglish' ? 'bg-[#0B4D43] text-white' : 'bg-white text-[#0B4D43]'}`}
+          {/* Language toggle pill — 64×32px, two clickable halves */}
+          <div className="flex w-16 h-8 rounded-full border border-[#1A8F8F] overflow-hidden text-xs font-semibold">
+            <button
+              onClick={() => setLang('taglish')}
+              aria-pressed={lang === 'taglish'}
+              className={`flex-1 flex items-center justify-center transition-colors duration-150 ${lang === 'taglish' ? 'bg-[#1A8F8F] text-white' : 'bg-white text-[#1A8F8F]'}`}
             >
               TL
-            </span>
-            <span
-              className={`absolute inset-y-0 right-0 w-1/2 flex items-center justify-center transition-colors duration-150 ${lang === 'english' ? 'bg-[#0B4D43] text-white' : 'bg-white text-[#0B4D43]'}`}
+            </button>
+            <button
+              onClick={() => setLang('english')}
+              aria-pressed={lang === 'english'}
+              className={`flex-1 flex items-center justify-center transition-colors duration-150 ${lang === 'english' ? 'bg-[#1A8F8F] text-white' : 'bg-white text-[#1A8F8F]'}`}
             >
               EN
-            </span>
-          </button>
+            </button>
+          </div>
 
           <a
             href={WA_HREF}

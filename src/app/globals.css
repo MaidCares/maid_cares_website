@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap');
 @import "tailwindcss";
 
+@theme {
+  --color-teal-dark: #1A8F8F;
+  --color-teal-mid: #2ABFBF;
+  --color-teal-light: #E8F9F9;
+  --color-teal-card: #F0FAFA;
+}
+
 :root {
   --background: #ffffff;
   --foreground: #171717;

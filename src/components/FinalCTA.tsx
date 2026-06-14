@@ -10,7 +10,7 @@ export default function FinalCTA() {
   const copy = t[lang].finalCta;
 
   return (
-    <section className="py-16 bg-[#0B4D43] reveal">
+    <section className="py-16 bg-[#1A8F8F] reveal">
       <div className="max-w-xl mx-auto px-4 text-center">
         <h2 className="text-2xl sm:text-3xl font-bold text-white mb-3">{copy.heading}</h2>
         <p className="text-white/70 mb-8">{copy.sub}</p>
